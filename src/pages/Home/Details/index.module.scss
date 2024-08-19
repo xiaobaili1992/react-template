@@ -1,0 +1,20 @@
+.detail {
+  width: 375px;
+  padding: 0 24px;
+  box-sizing: border-box;
+  h1 {
+    font-size: 18px;
+  }
+  ul,
+  li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
