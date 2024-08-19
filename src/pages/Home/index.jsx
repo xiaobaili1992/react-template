@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom'
-import Details from './Details'
-import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
+import Details from './Details';
+import { useSelector } from 'react-redux';
 
 const Home = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const goLogin = () => {
-    navigate('/login?aaa=111&bbb=222&ccc=333')
-  }
+    navigate('/login?aaa=111&bbb=222&ccc');
+  };
 
-  const storeCount = useSelector((state) => state.counter.value)
+  const storeCount = useSelector((state) => state.counter.value);
 
   return (
     <>
@@ -19,7 +19,7 @@ const Home = () => {
       </div>
       <Details />
     </>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
