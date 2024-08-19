@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const Home = () => {
   const navigate = useNavigate()
   const goLogin = () => {
-    navigate('/login?aaa=111&bbb=222')
+    navigate('/login?aaa=111&bbb=222&ccc=333')
   }
 
   const storeCount = useSelector((state) => state.counter.value)
