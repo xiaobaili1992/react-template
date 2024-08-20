@@ -8,9 +8,9 @@ import { Button } from 'antd';
 const Login: React.FC = () => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
-  const aaa = params.get('aaa');
-  const bbb = params.get('bbb');
-  const [count, setCount] = useState(0);
+  const aaa: string | null = params.get('aaa');
+  const bbb: string | null = params.get('bbb');
+  const [count, setCount] = useState<number>(0);
   const goHome = () => {
     navigate('/');
   };
