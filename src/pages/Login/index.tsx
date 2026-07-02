@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { increment, decrement } from '@/store/counterSlice';
-import { CounterState } from '@/store';
-import { Button } from 'antd';
+import useCounterStore from '@/store/counterStore';
+import { Button } from '@/components/ui/button';
 
 const Login: React.FC = () => {
   const navigate = useNavigate();
@@ -15,8 +13,9 @@ const Login: React.FC = () => {
     navigate('/');
   };
 
-  const storeCount = useSelector((state: CounterState) => state.counter.value);
-  const dispatch = useDispatch();
+  const storeCount = useCounterStore((state) => state.value);
+  const increment = useCounterStore((state) => state.increment);
+  const decrement = useCounterStore((state) => state.decrement);
 
   return (
     <div>
@@ -30,8 +29,8 @@ const Login: React.FC = () => {
       <div>================================分割线===================================</div>
 
       <div>store中count值：{storeCount}</div>
-      <Button onClick={() => dispatch(increment())}>点击 +1</Button>
-      <Button onClick={() => dispatch(decrement())}>点击 -1</Button>
+      <Button onClick={increment}>点击 +1</Button>
+      <Button onClick={decrement}>点击 -1</Button>
 
       <Button onClick={goHome}>去首页</Button>
     </div>

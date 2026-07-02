@@ -1,9 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Details from '@/pages/Home/Details';
-import { useSelector } from 'react-redux';
-import { CounterState } from '@/store';
-import { Button } from 'antd';
+import useCounterStore from '@/store/counterStore';
+import { Button } from '@/components/ui/button';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
@@ -11,7 +10,7 @@ const Home: React.FC = () => {
     navigate('/login?aaa=111&bbb=222&ccc');
   };
 
-  const storeCount = useSelector((state: CounterState) => state.counter.value);
+  const storeCount = useCounterStore((state) => state.value);
 
   return (
     <>
